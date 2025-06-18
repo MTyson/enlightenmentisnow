@@ -994,6 +994,8 @@ All the wrong notes and missed chords were all part of the song.
         const headerH1 = header.querySelector('h1');
         const currentChapterSpan = document.getElementById('current-chapter');
         const chapters = document.querySelectorAll('.chapter');
+        const footer = document.querySelector('footer');
+        const backToTopButton = document.getElementById('floating-back-to-top');
 
         if (bookTitleMain) {
             const bookTitleRect = bookTitleMain.getBoundingClientRect();
@@ -1031,6 +1033,15 @@ All the wrong notes and missed chords were all part of the song.
         } else {
             currentChapterSpan.textContent = '';
             currentChapterSpan.classList.remove('show');
+        }
+
+        // Show footer when scrolling down
+        if (window.scrollY > 200) {
+            footer.classList.add('show');
+			backToTopButton.classList.add('show');
+        } else {
+            footer.classList.remove('show');
+			backToTopButton.classList.remove('show');
         }
     });
 </script>
@@ -1100,9 +1111,15 @@ You are always meditating.
 </section>
 
     </main>
+    <section id="contact" class="chapter">
+        <h1 class="chapter-title">Contact</h1>
+        <p>Email: <a href="mailto:matthewcarltyson@gmail.com">matthewcarltyson@gmail.com</a></p>
+        <p>Send a request to the above email address if you'd like a printed version of the book.</p>
+    </section>
     <footer>
         <p>Contact: matthewcarltyson@gmail.com | Print versions available</p>
     </footer>
-    <a href="#top" id="floating-back-to-top" class="show" title="Back to Top">↑</a>
+    <a href="#top" id="floating-back-to-top" title="Back to Top">↑</a>
+    <a href="#contact" id="floating-contact" class="show" title="Contact">Contact</a>
 </body>
 </html>

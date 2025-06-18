@@ -262,6 +262,7 @@ main {
     transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
     opacity: 0; /* Start hidden for fade-in */
     pointer-events: none; /* Disable clicks when hidden */
+    background-color: var(--secondary-color);
 }
 
 #floating-back-to-top.show {
@@ -270,20 +271,20 @@ main {
 }
 
 #floating-back-to-top:hover {
-    background-color: #27ae60;
+    background-color: #5dade2; /* A lighter blue */
     transform: translateY(-3px);
 }
 
-#floating-contact {
+#floating-back-to-top {
     position: fixed;
-    bottom: 80px; /* Adjust as needed */
+    bottom: 20px;
     right: 20px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color); /* same blue as the rest */
     color: white;
     padding: 10px 15px;
     border-radius: 50%;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     line-height: 1;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 999;
@@ -292,28 +293,50 @@ main {
     pointer-events: none; /* Disable clicks when hidden */
 }
 
+#floating-contact {
+position: fixed;
+bottom: 20px;
+left: 20px;
+background-color: var(--primary-color);
+color: white;
+padding: 10px 15px;
+border-radius: 50%;
+text-decoration: none;
+font-size: 1.2rem;
+line-height: 1;
+box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+z-index: 999;
+transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+opacity: 0; /* Start hidden for fade-in */
+pointer-events: none; /* Disable clicks when hidden */
+}
+
 #floating-contact.show {
-    opacity: 1; /* Fade in when shown */
-    pointer-events: auto; /* Enable clicks when shown */
+opacity: 1; /* Fade in when shown */
+pointer-events: auto; /* Enable clicks when shown */
 }
 
 #floating-contact:hover {
-    background-color: #27ae60;
+    background-color: #5dade2; /* A lighter blue */
     transform: translateY(-3px);
 }
 
 footer {
     text-align: center;
-    padding: 25px 0;
+    padding: 10px 0;
     background: var(--primary-color);
     color: #fff;
     box-shadow: 0 -2px 5px var(--shadow-color);
     margin-top: 30px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     font-size: 0.8em;
+    width: 100%;
+    position: relative;
+    opacity: 0;
+    transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+footer.show {
+    opacity: 1;
 }
 
 footer a {
