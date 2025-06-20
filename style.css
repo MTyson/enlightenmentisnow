@@ -13,8 +13,11 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    background: var(--background-color);
-    color: var(--text-color);
+    background: url('limpycreek1.JPG');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #fff;
     font-size: 1.1rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -49,71 +52,13 @@ p {
     margin-bottom: 1em;
 }
 
-header {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 0.8rem 0; /* Reduced vertical padding */
-    text-align: center;
-    box-shadow: 0 2px 5px var(--shadow-color);
-    position: fixed; /* Make the header fixed */
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000; /* Ensure it stays on top */
-    opacity: 0; /* Initially hidden */
-    visibility: hidden; /* Initially hidden */
-    transition: opacity 0.3s ease-out, visibility 0.3s ease-out; /* Smooth transition */
-}
-
-header.show {
-    opacity: 1; /* Show the header */
-    visibility: visible; /* Show the header */
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2rem; /* Reduced font size for sticky header */
-    color: #fff;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease-in; /* Smooth fade-in for the text */
-    display: inline-block; /* Allow it to sit next to the chapter title */
-    vertical-align: middle;
-}
-
-header.show h1 {
-    opacity: 1; /* Show the text when header is visible */
-}
-
-.current-chapter {
-    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
-    font-size: 1rem; /* Smaller font size */
-    margin-top: 5px; /* Space from the main title */
-    font-family: 'Lora', serif; /* Use Lora for chapter title */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s ease-in;
-}
-
-header.show .current-chapter {
-    opacity: 1;
-}
-
-header a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-header a:hover {
-    text-decoration: underline;
-}
-
 /* No specific padding-top needed on main for this effect, as header is not pushing content */
 
 main {
     padding: 30px 20px;
     max-width: 850px;
     margin: 20px auto;
-    background: var(--card-background);
+    background-color: rgba(255, 255, 255, 0.8);
     border-radius: 10px;
     box-shadow: 0 4px 15px var(--shadow-color);
 }
@@ -129,6 +74,9 @@ main {
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
+    padding-bottom: 0.5rem; /* Add some space for the border */
+    border-bottom: 1px dashed var(--border-color); /* Subtle dashed line */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
 }
 
 .book-subtitle {
@@ -249,7 +197,7 @@ main {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: white;
     padding: 10px 15px;
     border-radius: 50%;
@@ -262,63 +210,59 @@ main {
     transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
     opacity: 0; /* Start hidden for fade-in */
     pointer-events: none; /* Disable clicks when hidden */
-    background-color: var(--secondary-color);
-}
-
-#floating-back-to-top.show {
-    opacity: 1; /* Fade in when shown */
-    pointer-events: auto; /* Enable clicks when shown */
 }
 
 #floating-back-to-top:hover {
-    background-color: #5dade2; /* A lighter blue */
+    background-color: #5dade2;
     transform: translateY(-3px);
 }
 
-#floating-back-to-top {
+#floating-contact {
     position: fixed;
+    left: 20px;
     bottom: 20px;
-    right: 20px;
-    background-color: var(--primary-color); /* same blue as the rest */
+    background-color: blue;
     color: white;
     padding: 10px 15px;
-    border-radius: 50%;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 999;
     transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
-    opacity: 0; /* Start hidden for fade-in */
-    pointer-events: none; /* Disable clicks when hidden */
-}
-
-#floating-contact {
-position: fixed;
-bottom: 20px;
-left: 20px;
-background-color: var(--primary-color);
-color: white;
-padding: 10px 15px;
-border-radius: 50%;
-text-decoration: none;
-font-size: 1.2rem;
-line-height: 1;
-box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-z-index: 999;
-transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
-opacity: 0; /* Start hidden for fade-in */
-pointer-events: none; /* Disable clicks when hidden */
-}
-
-#floating-contact.show {
-opacity: 1; /* Fade in when shown */
-pointer-events: auto; /* Enable clicks when shown */
+    opacity: 1; /* Always visible */
+    pointer-events: auto; /* Always clickable */
+    border-radius: 5px;
+    width: auto;
+    display: block;
+    text-align: center;
 }
 
 #floating-contact:hover {
-    background-color: #5dade2; /* A lighter blue */
+    background-color: #5dade2;
     transform: translateY(-3px);
+}
+
+#back-to-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: blue;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 999;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+#back-to-top-button.show {
+    display: block; /* Show when scrolled down */
 }
 
 footer {
@@ -431,6 +375,24 @@ footer a:hover {
     margin-bottom: 0.5rem;
 }
 
+
+
+
+.book-title.sticky {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 850px;
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    z-index: 999;
+    margin: 0;
+    box-sizing: border-box;
+    transition: none;
+}
+
 #contact a {
     color: var(--secondary-color);
     text-decoration: none;
@@ -438,4 +400,25 @@ footer a:hover {
 
 #contact a:hover {
     text-decoration: underline;
+}
+
+#floating-contact {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    line-height: 1;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
+}
+
+#floating-contact:hover {
+    background-color: #5dade2;
+    transform: translateY(-3px);
 }
