@@ -76,7 +76,7 @@ main {
     color: var(--primary-color);
     padding-bottom: 0.5rem; /* Add some space for the border */
     border-bottom: 1px dashed var(--border-color); /* Subtle dashed line */
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    box-shadow: 0 3px 0px rgba(0, 0, 0, 0.05); /* Subtle shadow, only on bottom */
 }
 
 .book-subtitle {
@@ -386,7 +386,6 @@ footer a:hover {
     max-width: 850px;
     width: 100%;
     padding: 10px 20px;
-    box-shadow: 0 4px 15px var(--shadow-color);
     z-index: 999;
     margin: 0;
     box-sizing: border-box;
