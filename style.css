@@ -10,7 +10,7 @@
     /* Font Definitions */
     --font-lora: 'Lora', serif;
     --font-oswald: 'Oswald', sans-serif;
-    --font-dancing-script: 'Dancing Script', cursive;
+    --font-cursive: 'Great Vibes', cursive;
 
     --padding-sides: 1.5rem; /* Standard side padding for responsive design */
     --content-max-width: 850px; /* Max width of the document area, including internal padding */
@@ -84,6 +84,15 @@ p {
     padding: 30px var(--padding-sides); /* Uses --padding-sides for left/right */
 }
 
+.greeting {
+    font-family: var(--font-cursive); /* Apply Dancing Script font */
+    font-size: 2.5rem; /* Large and inviting */
+    color: var(--primary-color); /* Use the primary accent color */
+    text-align: center; /* CENTER THE TEXT */
+    margin-top: 1.5rem; /* Space above it */
+    margin-bottom: 2rem; /* Space below it */
+    line-height: 1.2;
+}
 /* --- Title Page Styling --- */
 .title-page {
     text-align: center;
@@ -103,7 +112,7 @@ p {
 }
 
 .book-subtitle { /* For the initial subtitle on the title page */
-    font-family: var(--font-dancing-script); /* Dancing Script */
+    font-family: var(--font-cursive);
     font-size: 2.5rem;
     margin-top: 0;
     color: #555; /* Slightly darker gray */
@@ -152,7 +161,7 @@ p {
 }
 
 .sticky-title-bar h2.sticky-book-subtitle {
-    font-family: var(--font-dancing-script);
+    font-family: var(--font-cursive);
     font-size: 1.1rem; /* Smaller size for sticky subtitle */
     margin: 0.2em 0 0;
     color: #555;
