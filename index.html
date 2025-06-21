@@ -6,15 +6,32 @@
     <title>Enlightenment Is Now</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lora:wght@400;700&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lora:wght@400;700;1,400&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Floating Contact Button (Stays fixed relative to viewport) -->
     <a href="#contact" id="floating-contact">Contact</a>
-    <main id="book-content">
+    <!-- Floating Back to Top Button (Stays fixed relative to viewport) -->
+    <a href="#book-main-container-inner" id="floating-back-to-top">↑</a> 
+
+    <!-- Main document container. This entire box will float in the center,
+         allowing a sliver of the background image to show above it.
+         Its content will scroll internally. -->
+    <main id="book-main-container">
+        <!-- The initial title page content -->
+
+        <p>Welcome, friend.</p>
+               <!-- The sticky title bar. This element will contain the title/subtitle
+             that sticks to the top of the 'main' container's viewport as you scroll its contents. -->
+        <div class="sticky-title-bar" id="sticky-header-content">
+            <h1 class="book-title">Enlightenment is Now</h1>
+            <h2 class="sticky-book-subtitle">A Handbook</h2>
+        </div>
+
         <div class="title-page">
-            <h2 class="book-title" id="book-title-main">Enlightenment is Now</h2>
-            <h3 class="book-subtitle">A Handbook</h3>
+
             <p class="author"><em>M. C. Tyson</em></p>
             <p class="dedication">Dedicated to</p>
             <p class="dedication-name">Swami Venkatesananda</p>
@@ -22,320 +39,111 @@
             <p class="publication-date">Edition note: 6/17/2025 | Grant’s Pass, OR</p>
         </div>
         
-        <nav id="table-of-contents">
-            <h2>Table of Contents</h2>
-            <ul>
-                <li><a href="#introduction">Introduction</a></li>
-                <li><a href="#breathing">Breathing</a></li>
-                <li><a href="#relaxing">Relaxing</a></li>
-                <li><a href="#desire">Desire</a></li>
-                <li><a href="#whats-the-point">What’s the point?</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#mind">Mind</a></li>
-                <li><a href="#thoughts">Thoughts</a></li>
-                <li><a href="#suffering">Suffering</a></li>
-                <li><a href="#indifference">Indifference</a></li>
-                <li><a href="#impermanence">Impermanence</a></li>
-                <li><a href="#tradition">Tradition</a></li>
-                <li><a href="#god">God</a></li>
-                <li><a href="#neuro-digital-bondage">Neuro-digital bondage</a></li>
-                <li><a href="#dreaming">Dreaming</a></li>
-                <li><a href="#the-banana-stem">The banana stem</a></li>
-                <li><a href="#essence">Essence</a></li>
-                <li><a href="#accepting-and-struggling">Accepting and struggling</a></li>
-                <li><a href="#discouragement">Discouragement</a></li>
-                <li><a href="#meditation">Meditation</a></li>
-            </ul>
-        </nav>
+        <!-- All scrollable book content below the initial title page -->
+        <div class="book-scroll-content-wrapper"> 
 
-        <a href="#" id="floating-back-to-top">↑</a>
+            <nav id="table-of-contents">
+                <h2>Table of Contents</h2>
+                <ul>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#breathing">Breathing</a></li>
+                    <li><a href="#relaxing">Relaxing</a></li>
+                    <li><a href="#desire">Desire</a></li>
+                    <li><a href="#whats-the-point">What’s the point?</a></li>
+                    <li><a href="#mind">Mind</a></li>
+                    <li><a href="#thoughts">Thoughts</a></li>
+                    <li><a href="#suffering">Suffering</a></li>
+                    <li><a href="#indifference">Indifference</a></li>
+                    <li><a href="#impermanence">Impermanence</a></li>
+                    <li><a href="#tradition">Tradition</a></li>
+                    <li><a href="#god">God</a></li>
+                    <li><a href="#neuro-digital-bondage">Neuro-digital bondage</a></li>
+                    <li><a href="#dreaming">Dreaming</a></li>
+                    <li><a href="#the-banana-stem">The banana stem</a></li>
+                    <li><a href="#essence">Essence</a></li>
+                    <li><a href="#accepting-and-struggling">Accepting and struggling</a></li>
+                    <li><a href="#discouragement">Discouragement</a></li>
+                    <li><a href="#meditation">Meditation</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <section id="introduction" class="chapter">
+                <h1 class="chapter-title">Introduction</h1>
+                <p>Why pursue enlightenment? What is it? The second question is easier to answer. Enlightenment is seeing things for what they are. It is seeing clearly. This is a simple thing to say, but its ramifications are extraordinary. When you see clearly, what and how you see transforms you, because what’s really there is not at all like what we normally assume.</p>
+                <p>This is a natural process we can see operating all the time. You see something, you have a certain understanding of it, and if you get to know it better, you gain a much deeper appreciation, one that doesn’t annihilate your initial impression, but puts it into a more complete context.</p>
+                <p>This happens with all kinds of things. People, skills, objects, everything. We meet someone and we think, this is who that person is. Then, if we allow it, something amazing happens, it turns out, that person is something much richer. That first impression has some relation to that richer view, but it is only like a small, skewed angle or perspective.</p>
+            </section>
+            
+            <section id="breathing" class="chapter">
+                <h1 class="chapter-title">Breathing</h1>
+                <p>Enlightenment is now, and a good place to start seeing it is with the breath, which is also always there with us. Watching the breath should be an uncomplicated thing. It’s more a remembering to notice than a technique. There are plenty of breathing techniques out there and they may be very helpful, but here we are concerned with just the natural breath, with paying attention to it, more than making it do something special. It’s already doing something very special.</p>
+                <p>In life and on the spiritual path, we are in need of something we can rely on. Our worldly fortunes are always rising and falling. There are contradictory religious doctrines. Thoughts are continually finding themselves in a confusion. It is very easy to become lost in ideas and impressions. Emotions will carry you off and deposit you somewhere. It can be very hard to distinguish what is really happening. Just turning on the news or having a conversation with a family member can trigger a whole cascading stream of thinking that carries us away.</p>
+                <p>The breath can be our homebase.</p>
+            </section>
+
+            <section id="relaxing" class="chapter">
+                <h1 class="chapter-title">Relaxing</h1>
+                <p>There is an inner tension we carry with us. This is the tension of sorting everything we encounter according to our mental criteria. We are so good at this, we don’t even notice we are doing it. We think we are interacting with the world, but really, we are interacting with an intangible layer of meaning that we project onto the world. It’s impossible to really relax while this is going on. Usually, we only get a break during sleep or special circumstances when the filtering process is suspended for a time.</p>
+                <p>We want to relax not only because it's good for our health and wellbeing, but because while we are all clenched up inside, we are not able to feel what’s happening in and around us. If you ever have the chance to sit in nature, you’ll notice that if you are quiet and still for a little bit, the little birds and critters will start coming out, the whole scene will start to reveal itself and its life. Even the grasses and leaves will wave shyly at you in the breeze. The mosquitos and ants might get after you, too!</p>
+            </section>
+            
+            <section id="contact" class="chapter">
+                <h1 class="chapter-title">Contact</h1>
+                <p>If you have any questions or feedback, please feel free to reach out:</p>
+                <p>Email: <a href="mailto:mct@enlightenmentisnow.com">mct@enlightenmentisnow.com</a></p>
+            </section>
+
+        </div> <!-- /book-scroll-content-wrapper -->
         
-        <section id="introduction" class="chapter">
-        <h1 class="chapter-title">Introduction</h1>
-        
-        
-        <p>
-        Why pursue enlightenment?  What is it?
-        </p>
-        <p>
-        The second question is easier to answer.  Enlightenment is seeing things for what they are.  It is seeing clearly.  This is a simple thing to say, but its ramifications are extraordinary.  When you see clearly, what and how you see transforms you, because what’s really there is not at all like what we normally assume.
-        </p>
-        <p>
-        This is a natural process we can see operating all the time.  You see something, you have a certain understanding of it, and if you get to know it better, you gain a much deeper appreciation, one that doesn’t annihilate your initial impression, but puts it into a more complete context.  
-        </p>
-        <p>
-        This happens with all kinds of things.  People, skills, objects, everything.  We meet someone and we think, this is who that person is.  Then, if we allow it, something amazing happens, it turns out, that person is something much richer.  That first impression has some relation to that richer view, but it is only like a small, skewed angle or perspective.  
-        </p>
-        <p>
-        And if we allow this process to continue deepening, it finds an even deeper layer which is just like ourselves.  There is a part of ourselves that is very deep, before thoughts and concepts, that just <em>is</em>, and that same deep essence is there in everyone else!  
-        </p>
-        <p>
-        In fact, it’s there in <em>everything.  </em>There is no thing, no phenomenon or occurrence that if directly witnessed openly enough doesn’t reveal that essence that is both its own inner truth - and our own!  This is a life changing awareness.
-        </p>
-        <p>
-        That change is the answer to our first question, which was: why pursue enlightenment?
-        </p>
-        <p>
-        When we are seeing clearly, everything can continue to operate as before, but we see in it an essence that is beautiful, that is connected to everything else.  That essence is and was always there.  It is us that changes, in the way we see.  Our own essence that gets a chance to come to the fore.  That too was always there, but it was hidden or obscured.  Even this hiding is also a function of the essence.  The essence remains undisturbed.  
-        </p>
-        <p>
-        That part of us that lets us know that we are who we are through all the stages of life, the one that keeps you being you when you are a child, in school, graduated, going to work, retiring, all these many stages, it is that aspect that makes you still you, even though you look different, your surroundings are different.  Everything has changed but you are still yourself.  That is the essence, and it recognizes itself in others, in all things.  
-        </p>
-        <p>
-        What obscures things and prevents us seeing clearly are the models we carry around with us.  These are the mental frameworks that we superimpose on everything.  These mental patterns operate on our experiences, filtering them, organizing them, defining everything as it happens, instead of letting us actually experience them directly.  Most of the time this is happening so fast and we are so familiar with it, it goes entirely unnoticed.  A lot of the time we think we are interacting with the world, but we are really interacting with a series of well-rehearsed ideas about the world.  It’s like a glove that we’ve worn so long we forget it's there.
-        </p>
-        <p>
-        When we first came into this world as babies, we didn’t have this filtration system in place.  We just stared with wonder at everything, cried when we were unhappy, smiled when we were happy.  But the world immediately gets to work on us, and this is our education, both formal and informal.  Everything and everyone imparts a bit of the structure to us, until we have an entire world inside, a world of ideas and preferences and automatic responses.  
-        </p>
-        <p>
-        This training is not necessarily something we can or should cast off.  We need to be able to tie our shoes and know what a stop sign means in order to function in the world.  What is desirable, what will let us see clearly again,  is to be able to tap into that original state that is still there underneath, to let it be our touchstone, our baseline.  If we can do that, then all the other skills and mental processes can work when they need to, but they will be witnessed from a deeper perspective.  You can stand back and watch them.  They are more like another interesting process that is happening, rather than the program in charge.
-        </p>
-        <p>
-        A surprising outcome when this happens is that you become more effective.  You are more focused and oriented towards what is important and you are more skillful because you are more awake, alert and attentive.  This is the paradox of beginner’s mind.  What is more important than technique and training is the attitude.  An attitude of total openness allows the world and your activity in it to be in sync.  It is not active control, but it is not disengagement, either.  It is a subtle merging of them into attentiveness.
-        </p>
-        <p>
-        To be present and mindful produces excellent action.  This truth contradicts the idea that enlightenment leads to a kind of indolence or indifference.  Non-attachment allows us to see clearly, but it is not the same as indifference.  
-        </p>
-        <p>
-        It’s pointless to be awesome at doing what doesn't really need to be done.  Although we’d like to think that getting good at something and just doing that over and over is excellence, it’s a bit of a lie.  What is really excellent is to take wherever you are, right this moment and meet it  with the fullness of yourself.  Even if it's something that we normally dismiss as insignificant, whatever it may be, if we apply the skill of being fully awake then we can do it well, which in its basic sense, means doing it with love.  
-        </p>
-        <p>
-        Sometimes we even  dismiss other people as insignificant.  This is a huge red flag, a glaring reminder to hold up and re-examine.  Nothing happening in your life is unimportant, and most of all, are the other human beings you encounter not insignificant.  Even the chair you are sitting on, the way it is putting pressure on your body to hold it up.  The way you are breathing, right now, it is so profound, it supports your very life.  If we could learn to breathe with utter care and attentiveness, the rest will also be infused with that awareness, because we are always breathing, no matter what we are doing.
-        </p>
-        <p>
-        There is a light touch, a kind of gentle awareness that can rest upon everything that is happening, without impacting it, just allowing it to be what it is.  This can stand behind even our activity.  This awareness is always there, in the background.  We can ease back into this awareness and everything continues along as before.  But we, in our perspective, are changed, more sensitive.  This background awareness is open to both activity and inactivity.  It naturally connects to everything.  This is why it is synonymous with unconditional love.
-        </p>
-        <p>
-        This change, easing into this awareness, we are calling enlightenment.  It naturally makes a change to our behavior, because now we are witnessing ourselves, our environment and its inhabitants and the events unfolding there from a perspective that allows them to be what they are.  It puts them into their proper perspective and brings them together effortlessly because it is itself the uniting factor.
-        </p>
-        <p>
-        This awareness is always there, functioning.  If it weren’t, nothing would exist.  Whatever is outside of it is non-being.   It is the basic witnessing which gives life its first hearing.  Because it is always there, enlightenment is always there.  Enlightenment is not in the future or far away or in somebody else’s control.  It is always now.  
-        </p>
-        </section>
-        
-        <section id="breathing" class="chapter">
-        <h1 class="chapter-title">Breathing</h1>
-        
-        
-        <p>
-        Enlightenment is now, and a good place to start seeing it is with the breath, which is also always there with us.  Watching the breath should be an uncomplicated thing.  It’s more a remembering to notice than a technique.  There are plenty of breathing techniques out there and they may be very helpful, but here we are concerned with just the natural breath, with paying attention to it, more than making it do something special.  It’s already doing something very special.
-        </p>
-        <p>
-        In life and on the spiritual path, we are in need of something we can rely on.  Our worldly fortunes are always rising and falling.  There are contradictory religious doctrines.  Thoughts are continually finding themselves in a confusion.   It is very easy to become lost in ideas and impressions.  Emotions will carry you off and deposit you somewhere.  It can be very hard to distinguish what is really happening.   Just turning on the news or having a conversation with a family member can trigger a whole cascading stream of thinking that carries us away.
-        </p>
-        <p>
-        The breath can be our homebase.
-        </p>
-        <p>
-        Sometimes we end up at war with ourselves, trying to eliminate negative thoughts and cultivate the state of mind we want.  It can be hard to even figure out what is real anymore.  What we know is sometimes wrong, that is for sure.  Have you ever worried about something, so much so that you can’t even sleep at night and then find the very next day that the thing wasn’t a problem at all?
-        </p>
-        <p>
-        The breath is real.  That much we know.  Without arguing with the mind, we can simply turn the attention to the breath.  The thinking process will naturally settle down.  Thoughts continue to arise and that is totally fine.  That is their nature, it’s what they do.  It’s very much like the wind through the trees.  Sometimes it blows hard, sometimes soft.  The difference is that the wind might actually blow the tree down.  Thoughts aren’t actually dangerous, until we take action on them or they stir up enough hurtful emotion to cause damage.
-        </p>
-        <p>
-        Thoughts and emotions like to come and present themselves as absolutely essential.  You know what <em>is </em>actually essential?  Breathing.
-        </p>
-        <p>
-        At first, the breath might seem boring.  That is actually not true.  It is always changing.  It is reflecting how we are moving our body, our emotional state, our thinking.  It is a two way process.  How we breathe in turn influences these other things.  It's an interconnected system.  This is all just stuff we can observe.  It’s interesting.  It doesn’t mean we have to control it.  If you get turned around and confused, just watch the breath.  The breath will reflect your state of observation.  Your observation will reflect the calming breath.  This is a benevolent effect, but even that isn’t the point.  The point is just noticing this incredible process that is happening.
-        </p>
-        <p>
-        The breath exists right on the continental divide where on one side, our will is in charge and on the other, things just happen in their own way.  The breath works both under our direct will and also on its own.  This fact is itself extraordinary and worthy of attention.  The slightest movement of the will can influence the breath.  This is very amazing.  There is another kind of ebb and flow here, between control and natural process.
-        </p>
-        <p>
-        We can develop that lightness of attention that will follow the breath when it is happening on its own as well as when we are acting upon it.  Behind both of these, what we could call the positive and negative poles of breath, is that simple awareness.
-        </p>
-        <p>
-        A description of breath awareness that I found helpful was given by Pema Chodron in <em>Wisdom of No Escape.  </em>I mention that here because I think it is a friendly book and does a good job describing a kind of breath awareness that is not overbearing.  I am giving you here just a simple idea about watching the breath, even less formal than what Chodron describes.  Whenever you think of it, just pay attention to how you are breathing.
-        </p>
-        <p>
-        The breath is really a good friend, because you can always turn to it and it will be there for you.  Get to know it.  The air moves through your nose, cool going in, warm going out.  The chest moves rhythmically.  Tension and release.  A good inhale is pleasurable.  A long exhale has a hint of urgency.  If thoughts interrupt your paying attention, it's no big deal.  Just gently return to the breath-noticing.
-        </p>
-        <p>
-        You don’t have to resist taking control of the breath.  That is ok, it naturally happens when you pay attention to it.  There’s no need to take dominance over it, or completely not influence it either.  You can take up a watching attitude that will watch both sides of this equation.  There is an observational part of you that can quietly watch the part of you that takes control of the breath, as well.
-        </p>
-        <p>
-        There’s really no wrong way to pay attention to your breathing.  When the mind has got you confused or events in the world are overwhelming you, you can just gently set that all aside and feel: “I wonder what the breath is up to.”  Then you just naturally start watching it.  The more you do this, the more friendly you become with the breathing.  It really does become a good friend that you know well, in all its different aspects and moods.  You become glad to have time to spend with it.
-        </p>
-        <p>
-        The breath is very interesting.  It is astride our inside and outside.  It takes air in, does something with it, then puts air back outside.  The world does its part with the air.  We don’t just take a big huge lungful of air at the beginning of life and then slowly let it out over time.  We keep on, moment by moment, in and out, a process of engagement with the world.
-        </p>
-        <p>
-        Some of the most interesting parts of breathing are the little pauses at the changes from inhale to exhale and back.  If you pay close attention, there isn’t really a single, decisive moment where the one changes to the other.  Or maybe there is.  But they do change.  We are breathing in, we are breathing out.  But the change is more like a continuum, a subtle shift.  There is a moment where they must be poised in perfect balance, when the exhale has completed and the inhale has yet to begin.  Likewise with the exhale becoming an inhale.
-        </p>
-        <p>
-        All this is remarkable.  It's even more remarkable that we’ve managed to dismiss it as an uninteresting sidebar to life.  Maybe we are here to do lots of big things in the world, but this breathing thing, it seems to be one of the things that we really are meant to do, something really essential and important.  Are we breathing in order to do everything else, or, is it maybe more true that this breathing process is something essential we are doing here?
-        </p>
-        <p>
-        In any case, watching the breath is a wonderful antidote to confusion.  Uncertainty, unhappiness, feeling lost.  Intense emotion of any kind.  We can say, OK, that is there.  What is the breath doing?  And just gently turn towards it, let it do its thing while we watch.  It’s so humbly going about the business of keeping us alive.
-        </p>
-        <p>
-        We don’t have to argue with our thought processes.  They are doing their thing, fine.  We can let them be and just breathe.  This is very practical advice.  Thinking is very easily and regularly wrong.  It is unreal.  It will convince you that X is true beyond a doubt and you must do Y immediately or else and then the next moment it’ll tell you Z is true and instead you should do A.   This goes on and on and will make you crazy.
-        </p>
-        <p>
-        Just acknowledge that all that is there, but let your awareness rest on the breathing.  This you can do anytime, without permission from anyone, without losing anything or undertaking a great effort.  It's just an act of noticing.  This simple practice can give you a real, reliable touchstone as you go through everyday life and walk the spiritual path.
-        </p>
-        </section>
-        
-        <section id="relaxing" class="chapter">
-        <h1 class="chapter-title">Relaxing</h1>
-        
-        
-        <p>
-        There is an inner tension we carry with us.  This is the tension of sorting everything we encounter according to our mental criteria.  We are so good at this, we don’t even notice we are doing it.  We think we are interacting with the world, but really, we are interacting with an intangible layer of meaning that we project onto the world.  It’s impossible to really relax while this is going on.  Usually, we only get a break during sleep or special circumstances when the filtering process is suspended for a time.
-        </p>
-        <p>
-        We want to relax not only because it's good for our health and wellbeing, but because while we are all clenched up inside, we are not able to feel what’s happening in and around us.  If you ever have the chance to sit in nature, you’ll notice that if you are quiet and still for a little bit, the little birds and critters will start coming out, the whole scene will start to reveal itself and its life.  Even the grasses and leaves will wave shyly at you in the breeze.  The mosquitos and ants might get after you, too!  
-        </p>
-        <p>
-        There’s a whole world that is there.  Relaxing lets it come out, because clenching is clenching to our own little world.  We are the sovereigns of these little worlds, and no matter how troubled the realm may be, at least it is ours.  The tension that will not let us relax is the business of projecting this little kingdom onto the world.
-        </p>
-        <p>
-        This is a subtle process at work.  I think at the root of it, there is a sense that we know what the world is, and we are determined to process everything we experience accordingly.  I mean, it feels like a responsibility to fit everything we experience into our known framework.  Everything labelled, this is a car, that is a tree, a car is important if I need to go somewhere, the tree is good for shade, etc.  This is a that, how does it relate to what I am trying to accomplish?
-        </p>
-        <p>
-        For we do seem to always be accomplishing something.  Even when we are relaxing, we are accomplishing relaxation.  We seem to be good at that part of the equation: tensing while relaxing.  But we are not so good at the other side: relaxing while tensing.  This is a kind of balancing that emerges without effort on our part, but more as a result of allowing insight to flourish.  Yogananda once wrote that we can be “actively calm and calmly active.”  That is the balance of real relaxation. 
-        </p>
-        <p>
-        At the root, the “this is a that” action of our mind is the one doing the heavy lifting.  Everything that arises has to be plugged into a known category or sloughed off and ignored.  We can trace back to the origins of this activity, but the main thing is to start being aware of it.  Awareness is love, and love is the power that unties the knots.  Just like it illuminates our mental processes.
-        </p>
-        <p>
-        We are really convinced that we know what everything is.  Our materialist science supports that view.  We feel justified in ignoring the cool texture of the desk on our hand because it's ‘just’ a collection of molecules and energy bouncing around.  It fits into a mental framework and gets pushed aside.  A desk is only a means to an end.  The entire universe becomes only a means to our ends!  
-        </p>
-        <p>
-        We only get a break from this usually if something shocks us into a moment of direct witnessing.  If you are involved in a car wreck, suddenly, all the well-ordered pieces of what is what are disarranged and for a little bit, you just see directly.  It’s extraordinary.  In a car wreck, especially a bad one, suddenly all the priorities are totally clear, what is really important?  You immediately go to the people.  That’s it.  The wellbeing of the people comes immediately to the fore.
-        </p>
-        <p>
-        The job of continually organizing everything according to what we know is exhausting.  Everything must be continually fitted into the framework and the truth is they just really don’t fit entirely.  The systematizing mind will never accept that it is itself a part of the reality it is trying to encompass.  It cannot see its own limitation.   That is up to us, to activate the deeper part of ourselves that can.
-        </p>
-        <p>
-        You look at the curtain hanging in the window and just go, “curtain”.  Nothing special to see there.  But if you go a bit closer in, hm, where did this little stain come from?  And you know that this particular curtain has its own unique history, the cotton came from specific plants, the polyester from some oil well, passed through certain machines and people’s hands, all the way through shipping containers and stores and brought to this place where it is just hanging there quietly doing its job.  
-        </p>
-        <p>
-        Obviously, if we went around trying to encounter everything with this level of detail, we’d quickly become lost.  Instead, we can learn to set aside this sorting, ordering and organizing.  Then things can present themselves just as they are, without being arranged by any thought process at all.  In fact, you can start seeing this mental process itself as another experience that is occurring.  Then it is just another phenomenon, no better or worse than the curtain.  It just is.  
-        </p>
-        <p>
-        The same pure witnessing is the audience of both the curtain hanging in the window, and the mental action that processes it.  The mental process wants to claim it is more fundamental and important, but that simply isn’t true.  In the view of unconditional awareness, they are equivalent. 
-        </p>
-        <p>
-        A lot of our mind-work is filtering things out.  A lot of life gets deflected as unimportant.  For example, the breath.  Why not notice it again right now?  You can label its phases as inhale, pause, exhale, pause, but you can also just watch it.  It’s a magical process, irreducible to concepts.  Each instant is totally unique and its own moment.  
-        </p>
-        <p>
-        Relaxation is the background state.  It’s always there.  It’s ok to exist without justifying it.   
-        </p>
-        </section>
-        
-        <section id="desire" class="chapter">
-        <h1 class="chapter-title">Desire</h1>
-        
-        
-        <p>
-        The organizing and orchestrating of life is driven by the desire to make things turn out the way they should.  We naturally seek pleasure and avoid pain.  On top of that is this whole structure of beliefs about what will satisfy those requirements, how we are going to achieve it.  It is a responsibility we feel.  We should never stop implementing what is right, to not do so is irresponsible.  This responsibility is almost never completely set aside.  It becomes almost inconceivable to set it aside; it appears to be the very reason we are here and alive.  If not to bring about what is right, why are we even living?
-        </p>
-        <p>
-        When we feel like we are really making this plan work out, we can become very satisfied.  When it’s going bad, we can become seriously discouraged.  This pendulum swings back and forth.  What is and what should be are ever at odds.  In truth, we are not very good at determining what is nor what should be, because we are stuck inside our minds and their patterns.  
-        </p>
-        <p>
-        The criteria we are using to judge things are suspect.  They come from questionable provenance.  They are really just a bunch of ideas and assumptions built up about things.  They are standing in the way of actually seeing anything.  If we can become more familiar and intimate with the seeing process itself, it will naturally clarify.  
-        </p>
-        <p>
-        We have a responsibility to life, but it is more to respond with sincerity to each situation as it arises, rather than fix the world so it fits into our ideals.  The only way to do this and really relax is to trust the overall process we find ourselves within.  Obviously we’ll never relax if we are convinced that the train will go off the rails the instant we stop managing it.  The only way to trust it is to see it for what it is, and that means easing up on the effort to control it.  This seems dangerous at first, but there is a deeper layer of control, if that is the right word, that we can tap into, just like the deeper layer of awareness.  Where control and awareness merge.
-        </p>
-        <p>
-        There is a role for us to play, and there is a role for confidence or trust in the work that the universe does on its own.  We need both.  We get into trouble when we think we are the decider.  That’s where we get pathological with our moods because we are stuck on our own idea of good and bad.  
-        </p>
-        <p>
-        Feeling up or down is natural.  But when you can’t move through it, experience it and let it go, then you are stuck.  We can even turn this into an infinite loop where we feel bad for feeling bad, because feeling bad isn’t allowed by our criteria!
-        </p>
-        <p>
-        We are so accustomed to managing things we don’t even realize we are doing it.  We have adopted a basic understanding about who we are, what we are about, what the world is and what we want from it.  These ideas have only a crude, tenuous relationship with things themselves, they are inevitably off-base and out-of-date.  If we’re honest, we get good at looking at the world so it fits into our ideas, rather than the other way around.  
-        </p>
-        <p>
-        We are running a program designed to implement an agenda in service to an ideal or end that we have in mind.  We feel we must constantly check on this, ensure that what is happening is going towards that and not away from it.  
-        </p>
-        <p>
-        No wonder we are stressed out!  The solution then is to do ‘relaxation exercises’.  Isn’t that a funny expression?  We are exercising to relax?  If we are exercising, we are definitely not relaxing.  There may be value in these techniques, but so long as we are still in the mode of trying to accomplish some thing, even if that thing is relaxing, then we are still stuck there, leaning forward.
-        </p>
-        <p>
-        This leaning forward posture is very characteristic of the world we have created today.  Maybe in another age, people leaned back too much and they were more in need of ‘tensation exercises’.  In any case, today we are usually on the way somewhere, somewhere more important, to do something more interesting that only requires right here as a stepping stone.  Here is only a necessary place to pass through.
-        </p>
-        <p>
-        What if right here is where we are going?
-        </p>
-        <p>
-        We are sorting things according to whether they are going to contribute to our goals, or hinder them, or are irrelevant.  Most things fall into that irrelevant category, and we treat them accordingly with indifference.  We mistake this for mastery of the world but it is only mastery of a phantom, the phantom-shadow of reality.  There is an inevitable shadow cast in the world of relativity.  It’s simply unavoidable.  The problem arises when it becomes a phantom-shadow and we imbue it with reality of its own.  It's only part of the reality, that transient shadow cast by permanent light.  A shadow naturally follows the movement of light, but when it becomes detached and we go on managing this shadow as though it were the light, we are lost.  We are clinging to the form of things.  This clinging is the source of suffering, not the form.  The form itself is always reflecting immediately the true essence.  “Enlightenment is now” is just the observation that even the clinging is itself a natural form reflecting the essence.
-        </p>
-        <p>
-        We get very good at determining what is good and bad in the world.  We get very clever at it, start applying strategies for maximizing this process, admiring those who have been successful with it, start analyzing our own thought processes to make them better and more efficient at producing the results we like.  There is a whole industry for this now, the success industry, life coaching, positive thinking.  
-        </p>
-        <p>
-        I am not demeaning these programs. Are you familiar with Napoleon Hill’s book “Think and Grow Rich”?.  Notice that he later in life changed the title a little, added a very important clause to the end:  “Think and Grow Rich with Peace of Mind.”
-        </p>
-        <p>
-        Sometimes, we want to eliminate from life anything that isn’t serving a purpose.  We get to where everything we do and see, be it making money, entertaining ourselves, whatever it may be, should be aligned in reference to this master plan that is somewhere inside. Trying to bring this master plan into a permanent structure is trouble.
-        </p>
-        <p>
-        If we watch our mind-states without judgement, we can see they are changing all the time.  Our goals are constantly shifting around, slipping and being supplanted.  We feel this inner demand to keep focused, to force the goals we want to remain front-and-center.  We reprimand ourselves for losing track of them.  Because worst of all is to be without aim.  Then you are simply drifting through the universe without anchor.  A meaningless void opens up in front of you.
-        </p>
-        <p>
-        When I was a young man, having sex was like, <em>really </em>important.  I seemed to be a failure if I failed at this.  It's strange though, because the more I looked at this, the more it seemed like the real purpose of this intense focus was to avoid falling out of having any purpose.  This was just kind of the backstop purpose.  Where did it come from?  It came from my upbringing and my culture and my biology.  But there was a kind of fear behind it.  What is this fear?  It is the fear of reality unmitigated by an orienting desire.  This unmitigated reality has a terrifying message for the unprepared mind:<em> you don’t exist</em>.  Not the way you thought you did.
-        </p>
-        </section>
-    
-        <footer>
+        <footer> <!-- Footer is now inside main, to scroll with main's content -->
             <p>&copy; 2025 M. C. Tyson | <a href="https://www.example.com">Example.com</a></p>
         </footer>
+    </main>
     
-        <script>
-            const bookTitle = document.getElementById('book-title-main');
-            let bookTitleOffsetTop = bookTitle.offsetTop;
+    <script>
+        // Smooth scrolling for all hash links (including TOC and floating buttons)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
 
-            window.addEventListener('scroll', function() {
-                const footer = document.querySelector('footer');
-                const backToTopButton = document.getElementById('floating-back-to-top');
-    
-                if (window.scrollY > 300) {
-                    backToTopButton.style.opacity = 1;
-                    backToTopButton.style.pointerEvents = 'auto';
-                } else {
-                    backToTopButton.style.opacity = 0;
-                    backToTopButton.style.pointerEvents = 'none';
-                }
-    
-                // Show footer when near bottom of page
-                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 200) {
-                    footer.classList.add('show');
-                } else {
-                    footer.classList.remove('show');
-                }
+                if (targetElement) {
+                    // Calculate offset for smooth scroll to account for sticky header
+                    // Get the sticky header's actual height
+                    const stickyHeader = document.getElementById('sticky-header-content');
+                    const stickyHeaderHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
+                    
+                    const offset = targetElement.offsetTop;
 
-                // Sticky book title logic
-                if (window.scrollY >= bookTitleOffsetTop) {
-                    bookTitle.classList.add('sticky');
-                } else {
-                    bookTitle.classList.remove('sticky');
-                }
-            });
-    
-            // Smooth scrolling for table of contents links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-    
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    // Scroll the 'main' container, not the window
+                    document.getElementById('book-main-container').scrollTo({
+                        top: offset,
                         behavior: 'smooth'
                     });
-                });
+                }
             });
-        </script>
-        
-        <section id="whats-the-point" class="chapter">
-        <h1 class="chapter-title">What’s the point?</h1>
-        
-        
-        <p>
-        Unfiltered reality is so vast and alive that one needs to prepare gradually to witness it.  The main filter is desire.  Desire is the fuel and substance that builds up the whole structure of the unreal.  
-        </p>
-        <p>
-        Desiring is in fact the essence of false existence.  It is very self of ignorance.  It is what is termed the ego, this process of desiring.  Desiring, fulfilling, lacking, desiring.  This is samsara, cyclical existence without foundation.  This is the action of the ego, which is all it is.
-        </p>
-    </section>
+        });
+
+        // JavaScript for floating back-to-top button (still viewport-fixed)
+        // Note: The visibility of this button is now based on the *main container's* scroll,
+        // so we listen to its scroll event, not window scroll.
+        const bookMainContainer = document.getElementById('book-main-container');
+        const floatingBackToTopButton = document.getElementById('floating-back-to-top');
+
+        if (bookMainContainer && floatingBackToTopButton) {
+            bookMainContainer.addEventListener('scroll', function() {
+                if (bookMainContainer.scrollTop > 300) { // If scrolled 300px down inside main
+                    floatingBackToTopButton.style.opacity = 1;
+                    floatingBackToTopButton.style.pointerEvents = 'auto';
+                } else {
+                    floatingBackToTopButton.style.opacity = 0;
+                    floatingBackToTopButton.style.pointerEvents = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
