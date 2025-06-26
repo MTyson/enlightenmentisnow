@@ -151,6 +151,11 @@ p {
     box-sizing: border-box; /* Include padding in width */
     transform: translateY(0); /* Ensure it starts at its natural position */
     transition: all 0.2s ease-in-out; /* Smooth transitions for potential changes */
+
+    display: flex;
+    flex-direction: column; /* Stack the main title and the new row vertically */
+    align-items: center; /* Center items horizontally within the column */
+    gap: 5px; /* Small gap between the main title and the row below it */
 }
 
 .sticky-title-bar h1.sticky-book-title {
@@ -161,11 +166,44 @@ p {
     color: var(--primary-color);
 }
 
+/* NEW: Style for the subtitle and buttons row */
+.subtitle-and-buttons-row {
+    display: flex;
+    align-items: center; /* Vertically align items in this row */
+    justify-content: space-between; /* Push contact left, back to top right, subtitle centered */
+    width: 100%; /* Take full width of the sticky bar's padding area */
+    padding: 0; /* Remove any default padding */
+    margin-top: 5px; /* Small space above this row */
+}
+
 .sticky-title-bar h2.sticky-book-subtitle {
     font-family: var(--font-oswald);
     font-size: 1.8rem; /* Smaller size for sticky subtitle */
     margin: 0.2em 0 0;
     color: #555;
+
+    margin: 0; /* Reset margins for flexbox */
+    text-align: center;
+    flex-grow: 1; /* Allow subtitle to take up available space in the center */
+    white-space: nowrap; /* Prevent subtitle text from wrapping */
+    overflow: hidden; /* Hide overflow if text is too long */
+    text-overflow: ellipsis; /* Add ellipsis if text is clipped */
+    padding: 0 10px; /* Padding to prevent subtitle touching buttons */
+}
+
+/* NEW: Styles for the buttons within the header */
+.header-button {
+    font-family: var(--font-oswald); /* Oswald for clear text */
+    font-size: 0.9rem; /* Slightly smaller to fit the line */
+    color: var(--primary-color);
+    text-decoration: none;
+    padding: 4px 8px; /* Slightly less padding */
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
 }
 
 
