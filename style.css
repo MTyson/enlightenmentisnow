@@ -15,13 +15,14 @@
     --padding-sides: 1.5rem; /* Standard side padding for responsive design */
     --content-max-width: 850px; /* Max width of the document area, including internal padding */
     --fixed-main-margin: 20px; /* Top/bottom margin for the #book-main-container */
+    --page-margin-x: 20px; /* Horizontal margin for the #book-main-container */
 }
 
 body {
     font-family: var(--font-lora);
     line-height: 1.8;
     margin: 0;
-    padding: 0;
+    padding: 0 var(--page-margin-x); /* Add horizontal padding to body */
     
     /* Background Image for the whole viewport */
     background: url('limpycreek1.JPG'); /* Ensure this image path is correct */
@@ -54,10 +55,10 @@ p {
 
 /* --- Main Book Container (the central document frame) --- */
 #book-main-container {
-    max-width: var(--content-max-width); /* Max width of the document area */
+    max-width: var(--content-max-width); /* Still respect max width on large screens */
     /* Adjust height to fill viewport, accounting for top/bottom margins */
-    height: calc(100vh - (var(--fixed-main-margin) * 2)); 
-    margin: var(--fixed-main-margin) auto; /* Center the container and provide top/bottom sliver of background */
+    height: calc(100vh - (var(--fixed-main-margin) * 2));
+    margin: var(--fixed-main-margin) auto; /* Center the container */
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     border-radius: 10px;
     box-shadow: 0 4px 15px var(--shadow-color);
@@ -121,18 +122,18 @@ p {
 .author {
     font-size: 1.3rem;
     margin-top: 2rem;
-    color: #777;
+    color: #5d5c5c;
 }
 
 .dedication, .dedication-name, .dedication-gratitude {
     font-size: 1rem;
-    color: #888;
+    color: #777;
     margin: 0.5em 0;
 }
 
 .publication-date {
     font-size: 0.8rem;
-    color: #aaa;
+    color: #787878;
     margin-top: 1.5em;
 }
 
@@ -161,8 +162,8 @@ p {
 }
 
 .sticky-title-bar h2.sticky-book-subtitle {
-    font-family: var(--font-cursive);
-    font-size: 1.1rem; /* Smaller size for sticky subtitle */
+    font-family: var(--font-oswald);
+    font-size: 1.8rem; /* Smaller size for sticky subtitle */
     margin: 0.2em 0 0;
     color: #555;
 }
@@ -213,6 +214,8 @@ p {
 .chapter {
     margin-bottom: 3rem;
     padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border-bottom: 1px dashed var(--border-color);
 }
 
@@ -311,8 +314,8 @@ footer a:hover {
     /* Adjust main container for mobile */
     #book-main-container {
         /* On small screens, margin handles outer spacing, and padding-sides handles inner content spacing */
-        margin: var(--fixed-main-margin) auto;
-        height: calc(100vh - (var(--fixed-main-margin) * 2)); 
+        margin: var(--fixed-main-margin) auto; /* Center the container */
+        height: calc(100vh - (var(--fixed-main-margin) * 2));
         border-radius: 5px; /* Smaller border-radius */
     }
 
