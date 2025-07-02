@@ -22,7 +22,8 @@ body {
     font-family: var(--font-lora);
     line-height: 1.8;
     margin: 0;
-    padding: 0 var(--page-margin-x); /* Add horizontal padding to body */
+    //padding: 0; /* Remove horizontal padding from body, main container will handle it */
+    padding: 0 var(--page-margin-x); 
     
     /* Background Image for the whole viewport */
     background: url('limpycreek1.webp'); /* Ensure this image path is correct */
@@ -34,8 +35,24 @@ body {
     font-size: 1.1rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow: hidden; /* Prevent body from scrolling if main has fixed height */
+    overflow-y: auto; /* Enable scrolling for the entire body */
 }
+
+/* Custom scrollbar for Webkit browsers (Chrome, Safari, Edge) for the body */
+/*
+body::-webkit-scrollbar {
+    width: 1rem;
+}
+body::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    border: 2px solid #f0f0f0;
+}
+*/
 
 /* Base styles for headings */
 h1, h2, h3 {
@@ -57,27 +74,14 @@ p {
 #book-main-container {
     max-width: var(--content-max-width); /* Still respect max width on large screens */
     /* Adjust height to fill viewport, accounting for top/bottom margins */
-    height: calc(100vh - (var(--fixed-main-margin) * 2));
+    height: auto; /* Allow height to be determined by content */
+    min-height: calc(100vh - (var(--fixed-main-margin) * 2)); /* Ensure it takes up space */
     margin: var(--fixed-main-margin) auto; /* Center the container */
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     border-radius: 10px;
     box-shadow: 0 4px 15px var(--shadow-color);
-    overflow-y: auto; /* Enable internal scrolling for the content inside */
+    overflow-y: visible; /* Content will now scroll with the body */
     position: relative; /* Crucial for sticky elements inside */
-
-    /* Custom scrollbar for Webkit browsers (Chrome, Safari, Edge) */
-    &::-webkit-scrollbar {
-        width: 8px;
-    }
-    &::-webkit-scrollbar-track {
-        background: #f0f0f0;
-        border-radius: 10px;
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: var(--primary-color);
-        border-radius: 10px;
-        border: 2px solid #f0f0f0;
-    }
 }
 
 /* Wrapper for the content that scrolls *within* the main container */
@@ -93,6 +97,7 @@ p {
     margin-top: 1.5rem; /* Space above it */
     margin-bottom: 2rem; /* Space below it */
     line-height: 1.2;
+    padding-top: 2rem;
 }
 /* --- Title Page Styling --- */
 .title-page {
@@ -353,7 +358,8 @@ footer a:hover {
     #book-main-container {
         /* On small screens, margin handles outer spacing, and padding-sides handles inner content spacing */
         margin: var(--fixed-main-margin) auto; /* Center the container */
-        height: calc(100vh - (var(--fixed-main-margin) * 2));
+        min-height: calc(100vh - (var(--fixed-main-margin) * 2)); /* Ensure it takes up space */
+        height: auto; /* Allow height to be determined by content */
         border-radius: 5px; /* Smaller border-radius */
     }
 

@@ -1187,11 +1187,9 @@ You are always breathing.  You are always meditating.  Enlightenment is now.
                     const stickyHeader = document.getElementById('sticky-header-content');
                     const stickyHeaderHeight = stickyHeader ? stickyHeader.offsetHeight : 0;
                     
-                    const offset = targetElement.offsetTop;
-
-                    // Scroll the 'main' container, not the window
-                    document.getElementById('book-main-container').scrollTo({
-                        top: offset,
+                    // Scroll the window, not the main container
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
                         behavior: 'smooth'
                     });
                 }
@@ -1199,14 +1197,12 @@ You are always breathing.  You are always meditating.  Enlightenment is now.
         });
 
         // JavaScript for floating back-to-top button (still viewport-fixed)
-        // Note: The visibility of this button is now based on the *main container's* scroll,
-        // so we listen to its scroll event, not window scroll.
-        const bookMainContainer = document.getElementById('book-main-container');
+        // Note: The visibility of this button is now based on the *window's* scroll.
         const floatingBackToTopButton = document.getElementById('floating-back-to-top');
 
-        if (bookMainContainer && floatingBackToTopButton) {
-            bookMainContainer.addEventListener('scroll', function() {
-                if (bookMainContainer.scrollTop > 300) { // If scrolled 300px down inside main
+        if (floatingBackToTopButton) {
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) { // If scrolled 300px down the window
                     floatingBackToTopButton.style.opacity = 1;
                     floatingBackToTopButton.style.pointerEvents = 'auto';
                 } else {
@@ -1222,15 +1218,15 @@ const chapterSections = document.querySelectorAll('.chapter'); // Select all cha
 const stickyHeader = document.getElementById('sticky-header-content');
 
 // Only proceed if all required elements exist
-if (bookMainContainer && stickyBookSubtitle && chapterSections.length > 0 && stickyHeader) {
+if (stickyBookSubtitle && chapterSections.length > 0 && stickyHeader) {
     // Store the initial subtitle text (e.g., "A Handbook")
     const initialSubtitleText = stickyBookSubtitle.textContent;
 
-    // Dynamic chapter title update logic 
-    bookMainContainer.addEventListener('scroll', function() {
+    // Dynamic chapter title update logic
+    window.addEventListener('scroll', function() {
         const stickyHeaderHeight = stickyHeader.offsetHeight;
-        // The scroll position relative to the start of the book-main-container's scrollable content
-        const scrollTop = bookMainContainer.scrollTop;
+        // The scroll position relative to the start of the document
+        const scrollTop = window.scrollY;
 
         let activeChapterTitle = initialSubtitleText; // Default to initial subtitle
 
@@ -1241,8 +1237,8 @@ if (bookMainContainer && stickyBookSubtitle && chapterSections.length > 0 && sti
             const chapterTitleElement = chapter.querySelector('.chapter-title');
             if (!chapterTitleElement) return; // Skip if no title in chapter
 
-            // The position of the chapter's start, relative to the scrollable container's top
-            const chapterTop = chapter.offsetTop; 
+            // The position of the chapter's start, relative to the document's top
+            const chapterTop = chapter.offsetTop;
 
             // If the user has scrolled *past* the chapter's top (accounting for sticky header),
             // this chapter becomes a candidate for the active one.
@@ -1257,7 +1253,7 @@ if (bookMainContainer && stickyBookSubtitle && chapterSections.length > 0 && sti
     });
 
     // Trigger an initial scroll event on page load to set the correct subtitle
-    bookMainContainer.dispatchEvent(new Event('scroll'));
+    window.dispatchEvent(new Event('scroll'));
 } else {
     console.warn("Could not find all necessary elements for sticky subtitle logic. Please check HTML IDs/classes.");
 }
