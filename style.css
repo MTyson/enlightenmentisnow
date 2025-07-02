@@ -25,7 +25,7 @@ body {
     padding: 0 var(--page-margin-x); /* Add horizontal padding to body */
     
     /* Background Image for the whole viewport */
-    background: url('limpycreek1.JPG'); /* Ensure this image path is correct */
+    background: url('limpycreek1.webp'); /* Ensure this image path is correct */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed; /* Crucial for background to stay put while content scrolls */
