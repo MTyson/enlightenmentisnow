@@ -104,7 +104,8 @@ p {
     text-align: center;
     /*margin-bottom: 3rem;*/
     padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
+    border-top: 1rem solid rgba(100, 149, 237, 0.6); /* Soft blue, slightly transparent */
+    border-bottom: 1rem solid rgba(100, 149, 237, 0.6); /* Soft blue, slightly transparent */
 }
 
 .book-title { /* For the initial display on the title page */
