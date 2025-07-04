@@ -183,7 +183,7 @@ p {
 }
 
 .sticky-title-bar h2.sticky-book-subtitle {
-    font-family: var(--font-oswald);
+    font-family: var(--font-cursive), var(--font-oswald);
     font-size: 1.8rem; /* Smaller size for sticky subtitle */
     margin: 0.2em 0 0;
     color: #555;
@@ -269,6 +269,7 @@ p {
 }
 
 .chapter-title { /* For the chapter titles within each section */
+    font-family: var(--font-cursive), var(--font-oswald); /* Great Vibes as primary, Oswald as backup */
     text-align: center;
     color: var(--primary-color);
     margin-top: 4rem; /* Spacing above chapter titles */
