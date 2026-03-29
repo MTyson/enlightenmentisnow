@@ -56,9 +56,9 @@ body::-webkit-scrollbar-thumb {
 
 /* Base styles for headings */
 h1, h2, h3 {
-    font-family: var(--font-oswald);
+    font-family: var(--font-lora); /* Changed from Oswald */
     font-weight: 700;
-    color: var(--text-color); /* Default heading color */
+    color: var(--text-color);
     line-height: 1.3;
 }
 
@@ -268,11 +268,13 @@ p {
     margin-bottom: 0;
 }
 
-.chapter-title { /* For the chapter titles within each section */
-    font-family: var(--font-cursive), var(--font-oswald); /* Great Vibes as primary, Oswald as backup */
+.chapter-title { 
+    /* Switching from Great Vibes to Lora italics for better readability */
+    font-family: var(--font-lora); 
+    font-style: italic;
     text-align: center;
     color: var(--primary-color);
-    margin-top: 4rem; /* Spacing above chapter titles */
+    margin-top: 4rem;
     margin-bottom: 2rem;
     font-size: 2.8rem;
     padding-bottom: 0.5rem;
