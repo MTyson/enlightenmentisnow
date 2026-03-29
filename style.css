@@ -113,11 +113,16 @@ p {
 .book-title { /* For the initial display on the title page */
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
-    color: var(--primary-color); /* Primary accent color */
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
     padding-bottom: 0.5rem;
     border-bottom: 1px dashed var(--border-color); /* Subtle dashed line */
     box-shadow: 0 3px 0px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     font-family: var(--font-lora); /* Lora for the main title */
+    display: block; /* Ensure the gradient spans the text width */
 }
 
 .book-subtitle { /* For the initial subtitle on the title page */
@@ -173,7 +178,11 @@ p {
     font-size: 1.8rem; /* Smaller size for sticky title */
     font-weight: 700;
     margin: 0;
-    color: var(--primary-color);
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 /* NEW: Style for the subtitle and buttons row */
