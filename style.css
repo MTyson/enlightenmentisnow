@@ -22,7 +22,7 @@ body {
     font-family: var(--font-lora);
     line-height: 1.8;
     margin: 0;
-    //padding: 0; /* Remove horizontal padding from body, main container will handle it */
+    /* padding: 0; Remove horizontal padding from body, main container will handle it */
     padding: 0 var(--page-margin-x); 
     
     /* Background Image for the whole viewport */
@@ -352,6 +352,71 @@ footer a:hover {
     text-decoration: underline;
 }
 
+/* --- Modal Styling --- */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.6); /* Black w/ opacity */
+    backdrop-filter: blur(5px); /* Add a nice blur effect */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+    animation: modal-appear 0.3s ease-out;
+}
+
+@keyframes modal-appear {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.email-address {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    word-break: break-all;
+}
+
+.email-address a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.email-address a:hover {
+    text-decoration: underline;
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
     body {
@@ -440,6 +505,12 @@ footer a:hover {
         width: 40px;
         height: 40px;
         font-size: 1.2rem;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+        margin: 20% auto;
     }
 }
 

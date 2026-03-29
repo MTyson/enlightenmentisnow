@@ -1164,10 +1164,7 @@ You are breathing.  You are meditating.  You are enlightened.
 </p>
 </section>
 
-<section id="contact" class="chapter">
-                <h1 class="chapter-title">Contact</h1>
-                <h3><a href="mailto:mct@enlightenmentisnow.com">mct@enlightenmentisnow.com</h3></p>
-            </section>
+
 
         </div> <!-- /book-scroll-content-wrapper -->
         
@@ -1176,7 +1173,55 @@ You are breathing.  You are meditating.  You are enlightened.
         </footer>
     </main>
     
+    <!-- Floating Navigation Buttons -->
+    <a href="javascript:void(0)" id="floating-contact">Contact</a>
+    <a href="#book-main-container" id="floating-back-to-top" title="Back to Top">↑</a>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Contact</h2>
+            <p>I would love to hear from you. Please send me an email at:</p>
+            <p class="email-address"><a href="mailto:mct@enlightenmentisnow.com">mct@enlightenmentisnow.com</a></p>
+        </div>
+    </div>
+
     <script>
+        // Contact Modal Logic
+        const contactModal = document.getElementById('contact-modal');
+        const contactTriggers = [
+            document.getElementById('contact-button-in-header'),
+            document.getElementById('floating-contact'),
+            document.querySelector('#table-of-contents a[href="#contact"]')
+        ];
+        const closeButton = document.querySelector('.close-button');
+
+        contactTriggers.forEach(trigger => {
+            if (trigger) {
+                trigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    contactModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                });
+            }
+        });
+
+        if (closeButton) {
+            closeButton.addEventListener('click', function() {
+                contactModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            });
+        }
+
+        // Close modal when clicking outside of the content box
+        window.addEventListener('click', function(event) {
+            if (event.target == contactModal) {
+                contactModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+        });
+
         // Smooth scrolling for all hash links (including TOC and floating buttons)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
