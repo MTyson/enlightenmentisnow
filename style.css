@@ -77,7 +77,9 @@ p {
     height: auto; /* Allow height to be determined by content */
     min-height: calc(100vh - (var(--fixed-main-margin) * 2)); /* Ensure it takes up space */
     margin: var(--fixed-main-margin) auto; /* Center the container */
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    background-color: rgba(255, 255, 255, 0.75); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Support for Safari */
     border-radius: 10px;
     box-shadow: 0 4px 15px var(--shadow-color);
     overflow-y: visible; /* Content will now scroll with the body */
@@ -150,7 +152,9 @@ p {
     left: 0;
     width: 100%;
     z-index: 100; /* Ensure it's above other scrolling content */
-    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white to cover content */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white to cover content */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Support for Safari */
     padding: 10px var(--padding-sides); /* Padding for the sticky bar */
     box-shadow: 0 2px 5px var(--shadow-color); /* Shadow to make it stand out */
     text-align: center;
