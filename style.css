@@ -111,22 +111,30 @@ p {
     border-bottom: 1rem solid rgba(100, 149, 237, 0.6); /* Soft blue, slightly transparent */
 }
 
+@keyframes subtleColorShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
 .book-title { /* For the initial display on the title page */
     font-size: 4.5rem; /* Increased from 3.5rem as requested */
     margin-bottom: 0.5rem;
     line-height: 1.0; /* Compact for multiple lines */
     text-align: center;
-    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    background: linear-gradient(to right, #27ae60, #2980b9, #16a085, #27ae60);
+    background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px dashed var(--border-color); /* Subtle dashed line */
-    box-shadow: 0 3px 0px rgba(0, 0, 0, 0.05); /* Subtle shadow */
     font-family: var(--font-lora); /* Lora for the main title */
     display: block; /* Ensure the gradient spans the text width */
     transition: all 0.3s ease;
+    animation: subtleColorShift 4s infinite alternate ease-in-out;
 }
 
 .book-subtitle { /* For the initial subtitle on the title page */
@@ -191,6 +199,10 @@ p {
     padding-bottom: 0;
     border-bottom: none;
     box-shadow: none;
+    background: linear-gradient(to right, #27ae60, #2980b9, #16a085, #27ae60);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .sticky-title-bar.scrolled .title-break {
@@ -206,11 +218,13 @@ p {
     font-size: 1.8rem; /* Smaller size for sticky title */
     font-weight: 700;
     margin: 0;
-    background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+    background: linear-gradient(to right, #27ae60, #2980b9, #16a085, #27ae60);
+    background-size: 300% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+    animation: subtleColorShift 4s infinite alternate ease-in-out;
 }
 
 /* NEW: Style for the subtitle and buttons row */
