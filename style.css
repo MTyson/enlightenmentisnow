@@ -242,7 +242,7 @@ p {
     font-weight: 700; /* Extra bold for more substance */
     font-size: 1.8rem; /* Smaller size for sticky subtitle */
     margin: 0.2em 0 0;
-    color: var(--text-color); /* Darkened for consistency and legibility */
+    color: var(--primary-color); /* Matches chapter titles */
 
     margin: 0; /* Reset margins for flexbox */
     text-align: center;
@@ -463,6 +463,34 @@ footer a:hover {
 
 .email-address a:hover {
     text-decoration: underline;
+}
+
+/* --- Author Modal Specific Styling --- */
+.author-modal-content {
+    max-width: 600px;
+}
+
+.author-portrait-container {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.author-portrait {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.author-blurb h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.author-blurb p {
+    font-style: italic;
+    line-height: 1.6;
 }
 
 /* --- Responsive Design --- */
