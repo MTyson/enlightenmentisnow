@@ -151,6 +151,16 @@ p {
     color: var(--text-color); /* Darkened for better contrast */
 }
 
+.author-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.author-link:hover {
+    color: var(--primary-color);
+}
+
 .dedication, .dedication-name, .dedication-gratitude {
     font-size: 1.1rem; /* Slightly larger for legibility */
     color: var(--text-color); /* Darkened significantly for better contrast */

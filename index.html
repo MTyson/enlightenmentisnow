@@ -36,7 +36,7 @@
         </div>
 
         <div class="title-page">
-            <p class="author"><em>M. C. Tyson</em></p>
+            <p class="author"><em><a href="#contact" class="author-link">M. C. Tyson</a></em></p>
             <p class="dedication">Dedicated to</p>
             <p class="dedication-name">Swami Venkatesananda</p>
             <p class="dedication-gratitude">with Gratitude</p>
@@ -1255,7 +1255,8 @@ You are breathing.  You are meditating.  You are enlightened.
         const contactTriggers = [
             document.getElementById('contact-button-in-header'),
             document.getElementById('floating-contact'),
-            document.querySelector('#table-of-contents a[href="#contact"]')
+            document.querySelector('#table-of-contents a[href="#contact"]'),
+            document.querySelector('.author-link')
         ];
         const closeButton = document.querySelector('.close-button');
 
