@@ -1263,7 +1263,10 @@ You are breathing.  You are meditating.  You are enlightened.
         contactTriggers.forEach(trigger => {
             if (trigger) {
                 trigger.addEventListener('click', function(e) {
-                    // e.preventDefault(); // Removed to allow hash to update in URL
+                    // Force the hash to update if it's not already correct
+                    if (this.getAttribute('href') === '#author' || this.getAttribute('href') === '#contact') {
+                        window.location.hash = this.getAttribute('href');
+                    }
                     contactModal.style.display = 'block';
                     document.body.style.overflow = 'hidden'; // Prevent background scrolling
                 });
