@@ -1353,44 +1353,44 @@ if (stickyBookSubtitle && chapterSections.length > 0 && stickyHeader) {
     // Store the initial subtitle text (e.g., "A Practice")
     const initialSubtitleText = stickyBookSubtitle.textContent;
 
-    // Dynamic chapter title update logic
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.scrollY;
+        // Dynamic chapter title update logic
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.scrollY;
 
-        // Add 'scrolled' class to the sticky header when scrolled down
-        // Threshold increased to prevent flashing and layout jumps
-        if (scrollTop > 250) {
-            stickyHeader.classList.add('scrolled');
-        } else if (scrollTop < 50) {
-            stickyHeader.classList.remove('scrolled');
-        }
+            // Add 'scrolled' class to the sticky header when scrolled down
+            if (scrollTop > 250) {
+                stickyHeader.classList.add('scrolled');
+            } else if (scrollTop < 50) {
+                stickyHeader.classList.remove('scrolled');
+            }
 
-        const stickyHeaderHeight = stickyHeader.offsetHeight;
-        // The scroll position relative to the start of the document
+            const stickyHeaderHeight = stickyHeader.offsetHeight;
+            let activeChapterTitle = initialSubtitleText;
+            let activeChapterId = "";
 
-        let activeChapterTitle = initialSubtitleText; // Default to initial subtitle
+            chapterSections.forEach(chapter => {
+                const chapterTitleElement = chapter.querySelector('.chapter-title');
+                if (!chapterTitleElement) return;
 
-        // Iterate through chapters to find which one is currently at the top of the view
-        // We want the *last* chapter whose top boundary has scrolled past the sticky header.
-        // This ensures the subtitle shows the *current* chapter, even if you're deep within it.
-        chapterSections.forEach(chapter => {
-            const chapterTitleElement = chapter.querySelector('.chapter-title');
-            if (!chapterTitleElement) return; // Skip if no title in chapter
+                const chapterTop = chapter.offsetTop;
 
-            // The position of the chapter's start, relative to the document's top
-            const chapterTop = chapter.offsetTop;
+                if (scrollTop >= chapterTop - stickyHeaderHeight - 20) {
+                    activeChapterTitle = chapterTitleElement.textContent;
+                    activeChapterId = chapter.id;
+                }
+            });
 
-            // If the user has scrolled *past* the chapter's top (accounting for sticky header),
-            // this chapter becomes a candidate for the active one.
-            // Add a small buffer to account for the sticky header
-            if (scrollTop >= chapterTop - stickyHeaderHeight - 20) { // 20px buffer above header
-                activeChapterTitle = chapterTitleElement.textContent;
+            // Update the sticky subtitle
+            stickyBookSubtitle.textContent = activeChapterTitle;
+
+            // Update the URL hash based on the current chapter
+            if (activeChapterId && window.location.hash !== '#' + activeChapterId && !contactModal.style.display || contactModal.style.display === 'none') {
+                history.replaceState(null, null, '#' + activeChapterId);
+            } else if (!activeChapterId && scrollTop < 500 && window.location.hash) {
+                // Clear hash if we're back at the top
+                history.replaceState(null, null, window.location.pathname + window.location.search);
             }
         });
-
-        // Update the sticky subtitle
-        stickyBookSubtitle.textContent = activeChapterTitle;
-    });
 
     // Trigger an initial scroll event on page load to set the correct subtitle
     window.dispatchEvent(new Event('scroll'));
