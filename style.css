@@ -248,9 +248,9 @@ p {
 }
 
 .sticky-title-bar h2.sticky-book-subtitle {
-    font-family: var(--font-sans);
-    font-weight: 700; /* Extra bold for more substance */
-    font-size: 1.8rem; /* Smaller size for sticky subtitle */
+    font-family: var(--font-cursive);
+    font-weight: 400; /* Great Vibes looks better with lighter weight */
+    font-size: 2.2rem; /* Adjusted for cursive sizing */
     margin: 0.2em 0 0;
     color: var(--primary-color); /* Matches chapter titles */
 
@@ -550,8 +550,8 @@ footer a:hover {
     }
 
     .sticky-title-bar h2.sticky-book-subtitle {
-        font-size: 0.9rem;
-        font-weight: 700; /* Bolder for better mobile legibility */
+        font-size: 1.5rem; /* Reduced for mobile */
+        font-weight: 400;
     }
 
     /* TOC adjustments for mobile */
