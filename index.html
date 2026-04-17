@@ -36,7 +36,7 @@
         </div>
 
         <div class="title-page">
-            <p class="author"><em><a href="#contact" class="author-link">M. C. Tyson</a></em></p>
+            <p class="author"><em><a href="#author" class="author-link">M. C. Tyson</a></em></p>
             <p class="dedication">Dedicated to</p>
             <p class="dedication-name">Swami Venkatesananda</p>
             <p class="dedication-gratitude">with Gratitude</p>
@@ -1285,6 +1285,18 @@ You are breathing.  You are meditating.  You are enlightened.
             }
         });
 
+        // Function to open modal based on URL hash
+        function handleHashChange() {
+            if (window.location.hash === '#contact' || window.location.hash === '#author') {
+                contactModal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Listen for hash changes and check on initial load
+        window.addEventListener('hashchange', handleHashChange);
+        window.addEventListener('load', handleHashChange);
+
         // Smooth scrolling for all hash links (including TOC and floating buttons)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1330,7 +1342,7 @@ const chapterSections = document.querySelectorAll('.chapter'); // Select all cha
 const stickyHeader = document.getElementById('sticky-header-content');
 
 // Only proceed if all required elements exist
-    if (stickyBookSubtitle && chapterSections.length > 0 && stickyHeader) {
+if (stickyBookSubtitle && chapterSections.length > 0 && stickyHeader) {
     // Store the initial subtitle text (e.g., "A Practice")
     const initialSubtitleText = stickyBookSubtitle.textContent;
 
