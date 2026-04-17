@@ -29,7 +29,7 @@
         <div class="sticky-title-bar" id="sticky-header-content">
             <h1 class="book-title">Enlightenment<br class="title-break">is<br class="title-break">Now</h1>
             <div class="subtitle-and-buttons-row">
-                <a href="#contact" id="contact-button-in-header" class="header-button">Contact</a>
+                <a href="#author" id="contact-button-in-header" class="header-button">Contact</a>
                 <h2 class="sticky-book-subtitle">A Practice</h2>
                 <a href="#book-main-container" id="back-to-top-button-in-header" class="header-button">Top</a> 
             </div>
@@ -1230,7 +1230,7 @@ You are breathing.  You are meditating.  You are enlightened.
     </main>
     
     <!-- Floating Navigation Buttons -->
-    <a href="javascript:void(0)" id="floating-contact">Contact</a>
+    <a href="#author" id="floating-contact">Contact</a>
     <a href="#book-main-container" id="floating-back-to-top" title="Back to Top">↑</a>
 
     <!-- Contact/Author Modal -->
@@ -1263,7 +1263,7 @@ You are breathing.  You are meditating.  You are enlightened.
         contactTriggers.forEach(trigger => {
             if (trigger) {
                 trigger.addEventListener('click', function(e) {
-                    e.preventDefault();
+                    // e.preventDefault(); // Removed to allow hash to update in URL
                     contactModal.style.display = 'block';
                     document.body.style.overflow = 'hidden'; // Prevent background scrolling
                 });
@@ -1274,6 +1274,10 @@ You are breathing.  You are meditating.  You are enlightened.
             closeButton.addEventListener('click', function() {
                 contactModal.style.display = 'none';
                 document.body.style.overflow = 'auto'; // Re-enable scrolling
+                // Optional: Clear hash when closing
+                if (window.location.hash === '#contact' || window.location.hash === '#author') {
+                    history.pushState("", document.title, window.location.pathname + window.location.search);
+                }
             });
         }
 
