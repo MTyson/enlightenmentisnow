@@ -1,10 +1,8 @@
 export default async function handler(req, res) {
-    alert('test');
     if (req.method !== 'POST') {
-        return res.status(405).json({ error: 'Method not allowed' });
+        return res.status(405).json({ error: 'Method not allowed. Please use POST.' });
     }
 
-    // Defensive body check in case it arrives as a string
     let body = req.body;
     if (typeof body === 'string') {
         try {
@@ -14,16 +12,16 @@ export default async function handler(req, res) {
         }
     }
 
-    const { name, email, message } = body || {};
-
-    console.info("FOO: " + email);
+    const name = body?.name?.trim();
+    const email = (body?.email || body?.contact)?.trim();
+    const message = body?.message?.trim();
 
     if (!name || !email || !message) {
-        return res.status(400).json({ error: 'All fields are required.' });
+        return res.status(400).json({ error: 'All fields (name, email, message) are required.' });
     }
 
     if (!process.env.RESEND_API_KEY) {
-        return res.status(500).json({ error: 'RESEND_API_KEY is not set in environment variables.' });
+        return res.status(500).json({ error: 'RESEND_API_KEY is not configured in Vercel environment variables.' });
     }
 
     try {
@@ -34,11 +32,11 @@ export default async function handler(req, res) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                from: 'Crestone Websites <onboarding@resend.dev>',
-                // IMPORTANT: Replace this with the exact email address you used to register at Resend:
-                to: [`matthewcarltyson@gmail.com`],
-                subject: `New Lead: ${name}`,
-                text: `Name: ${name}\nContact: ${email}\n\nMessage:\n${message}`,
+                from: 'Enlightenment is Now <onboarding@resend.dev>',
+                to: ['matthewcarltyson@gmail.com'],
+                reply_to: email,
+                subject: `New Reader Inquiry: ${name}`,
+                text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
             }),
         });
 
@@ -52,6 +50,6 @@ export default async function handler(req, res) {
         return res.status(200).json({ success: true, id: result.id });
     } catch (err) {
         console.error('Server catch error:', err);
-        return res.status(500).json({ error: err.message });
+        return res.status(500).json({ error: err.message || 'Internal server error' });
     }
 }
