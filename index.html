@@ -106,40 +106,21 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .cover-frame {
-            background: #FFFFFF;
-            border: 1px solid var(--border);
+        .book-cover {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
             border-radius: 4px;
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
-            padding: 1.75rem 1.25rem;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            aspect-ratio: 1 / 1.55;
+            border: 1px solid var(--border);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09), 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
-        .cover-frame .cover-title {
-            font-size: 1.6rem;
-            line-height: 1.2;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 400;
-            margin-top: 1.5rem;
-        }
-
-        .cover-frame .cover-sub {
-            font-style: italic;
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .cover-frame .cover-author {
-            font-size: 1rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
+        .book-cover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 42px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.06);
         }
 
         .hero-content h1 {
@@ -454,9 +435,8 @@
                 gap: 2.5rem;
             }
 
-            .cover-frame {
-                max-width: 280px;
-                margin: 0 auto;
+            .book-cover {
+                max-width: 240px;
             }
 
             .chapter-view {
@@ -492,12 +472,10 @@
     <main>
         <!-- HERO SECTION -->
         <section class="hero" id="about">
-            <div class="cover-frame">
-                <div>
-                    <div class="cover-title">Enlightenment<br>is<br>Now</div>
-                    <div class="cover-sub">A Handbook</div>
-                </div>
-                <div class="cover-author">Matthew Tyson</div>
+            <div class="cover-wrapper">
+                <img src="images/Kindle%20Cover%20(1).jpg" 
+                     alt="Enlightenment is Now by Matthew Tyson book cover" 
+                     class="book-cover">
             </div>
 
             <div class="hero-content">
