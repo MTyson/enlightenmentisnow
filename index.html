@@ -781,7 +781,7 @@
         const btn = document.getElementById('submit-btn');
 
         form.addEventListener('submit', async (e) => {
-            alert('test123');
+            console.log("begin submit");
             e.preventDefault();
 
             const origText = btn.innerText;
@@ -793,6 +793,8 @@
                 contact: document.getElementById('email').value.trim(),
                 message: document.getElementById('message').value.trim(),
             };
+
+            console.log("payload: " + JSON.stringify(payload));
 
             try {
                 const res = await fetch('/api/contact', {
