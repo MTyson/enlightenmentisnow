@@ -13,9 +13,9 @@ export default async function handler(req, res) {
         }
     }
 
-    const { name, contact, message } = body || {};
+    const { name, email, message } = body || {};
 
-    if (!name || !contact || !message) {
+    if (!name || !email || !message) {
         return res.status(400).json({ error: 'All fields are required.' });
     }
 
@@ -35,7 +35,7 @@ export default async function handler(req, res) {
                 // IMPORTANT: Replace this with the exact email address you used to register at Resend:
                 to: [`matthewcarltyson@gmail.com`],
                 subject: `New Lead: ${name}`,
-                text: `Name: ${name}\nContact: ${contact}\n\nMessage:\n${message}`,
+                text: `Name: ${name}\nContact: ${email}\n\nMessage:\n${message}`,
             }),
         });
 
