@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Edition Delivery — Enlightenment is Now</title>
+    <meta name="description"
+        content="Download your digital edition of Enlightenment Is Now by Matthew Tyson. Includes DRM-free EPUB, PDF, and device setup instructions for Kindle, Apple Books, Kobo, and desktop.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta property="og:title" content="Digital Edition Delivery — Enlightenment is Now">
+    <meta property="og:description"
+        content="Download your digital edition of Enlightenment Is Now by Matthew Tyson and setup instructions for your reader.">
+    <meta property="og:image" content="https://www.enlightenmentisnow.com/images/Kindle%20Cover%20(1).jpg">
+    <meta property="og:url" content="https://www.enlightenmentisnow.com/reading">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #FBFBF9;
+            --surface: #F3F1EA;
+            --surface-card: #FFFFFF;
+            --text: #1C1C1A;
+            --text-muted: #66635D;
+            --border: #E4E0D5;
+            --accent: #2E382E;
+            --accent-soft: #4A564A;
+            --font-serif: 'EB Garamond', Georgia, serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-serif);
+            line-height: 1.8;
+            font-size: 1.2rem;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            padding: 2rem 1.5rem;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand .title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            text-decoration: none;
+            color: var(--text);
+            transition: color 0.2s;
+        }
+
+        .brand .title:hover {
+            color: var(--accent);
+        }
+
+        .brand .author {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+        }
+
+        nav .back-link {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: color 0.2s, transform 0.2s;
+        }
+
+        nav .back-link:hover {
+            color: var(--text);
+            transform: translateX(-2px);
+        }
+
+        main {
+            flex: 1;
+            max-width: 760px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3.5rem 1.5rem 6rem;
+        }
+
+        /* Hero / Thank You Header */
+        .delivery-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .publisher-label {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 1.25rem;
+            display: inline-block;
+        }
+
+        .delivery-header h1 {
+            font-size: clamp(2.3rem, 5vw, 3.25rem);
+            font-weight: 400;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            margin-bottom: 1.25rem;
+        }
+
+        .delivery-header .subheading {
+            font-size: 1.22rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        /* Download Card */
+        .download-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        .book-preview {
+            width: 110px;
+            height: auto;
+            border-radius: 3px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.04);
+            margin: 0 auto 2rem;
+            display: block;
+            transition: transform 0.25s ease;
+        }
+
+        .book-preview:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            font-family: var(--font-sans);
+            font-size: 0.88rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 1.05rem 2rem;
+            border-radius: 3px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-primary {
+            background: var(--text);
+            color: #FFFFFF;
+            border: 1px solid var(--text);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+        .btn-icon {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .download-subtext {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 1.25rem;
+            line-height: 1.5;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .file-badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px dashed var(--border);
+        }
+
+        .badge {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background: var(--surface);
+            color: var(--accent-soft);
+            padding: 0.35rem 0.75rem;
+            border-radius: 3px;
+            border: 1px solid var(--border);
+        }
+
+        /* Instructions Section */
+        .instructions-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 2.75rem 2.25rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            margin-bottom: 3.5rem;
+        }
+
+        .instructions-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .instructions-header .eyebrow {
+            font-family: var(--font-sans);
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .instructions-header h2 {
+            font-size: 1.75rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            color: var(--text);
+        }
+
+        .devices-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .device-item {
+            display: grid;
+            grid-template-columns: 44px 1fr;
+            gap: 1.25rem;
+            align-items: start;
+        }
+
+        .device-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 4px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+        }
+
+        .device-icon-box svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .device-text h3 {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: var(--text);
+            margin-bottom: 0.35rem;
+        }
+
+        .device-text p {
+            font-family: var(--font-serif);
+            font-size: 1.12rem;
+            line-height: 1.65;
+            color: #2D2D2A;
+        }
+
+        .device-text a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: var(--accent-soft);
+            font-weight: 500;
+            transition: color 0.2s, text-decoration-color 0.2s;
+        }
+
+        .device-text a:hover {
+            color: var(--accent);
+            text-decoration-color: var(--text);
+        }
+
+        .device-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 0;
+            opacity: 0.7;
+        }
+
+        /* Note box */
+        .support-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 1.5rem 1.75rem;
+            margin-top: 2rem;
+            font-size: 0.98rem;
+            line-height: 1.65;
+            color: var(--text-muted);
+        }
+
+        .support-box strong {
+            color: var(--text);
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+
+        .support-box a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* Bottom return navigation */
+        .bottom-nav {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .bottom-nav .home-link {
+            font-family: var(--font-sans);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .bottom-nav .home-link:hover {
+            color: var(--text);
+            border-color: var(--border);
+            background: var(--surface-card);
+        }
+
+        footer {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        footer a {
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 1.5rem 1.25rem;
+            }
+
+            main {
+                padding: 2.5rem 1.25rem 4rem;
+            }
+
+            .download-card {
+                padding: 2.25rem 1.25rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 1rem 1.25rem;
+                font-size: 0.82rem;
+            }
+
+            .instructions-card {
+                padding: 2rem 1.25rem;
+            }
+
+            .device-item {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .device-icon-box {
+                width: 38px;
+                height: 38px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">
+            <a href="/" class="title">Enlightenment is Now</a>
+            <span class="author">Matthew Tyson</span>
+        </div>
+        <nav>
+            <a href="/" class="back-link">
+                <span>&larr;</span> Return to Home
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HEADER & HEADLINE -->
+        <div class="delivery-header">
+            <span class="publisher-label">The Syncretic Foundation</span>
+            <h1>Thank You for Reading</h1>
+            <p class="subheading">
+                Your support makes this work independent and sustainable. Your digital edition of
+                <em>Enlightenment Is Now</em> is ready to download below.
+            </p>
+        </div>
+
+        <!-- PRIMARY DOWNLOAD CARD -->
+        <div class="download-card">
+            <img src="/images/Kindle%20Cover%20(1).jpg" alt="Enlightenment is Now digital edition cover"
+                class="book-preview" width="110" height="165">
+
+            <div>
+                <a href="https://esc4cx0azervwfig.public.blob.vercel-storage.com/Enlightenment_Is_Now_Digital_Edition.zip"
+                    class="btn btn-primary" download>
+                    <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+                    </svg>
+                    <span>Download Complete Digital Edition (.zip)</span>
+                </a>
+            </div>
+
+            <p class="download-subtext">
+                Includes DRM-Free EPUB, Formatted Reading PDF, Cover Artwork, and Quick-Start Guide.
+            </p>
+
+            <div class="file-badges">
+                <span class="badge">EPUB &bull; Reflowable</span>
+                <span class="badge">PDF &bull; Fixed Layout</span>
+                <span class="badge">DRM-Free</span>
+                <span class="badge">High-Res Cover</span>
+            </div>
+        </div>
+
+        <!-- READER DEVICE INSTRUCTIONS BOX -->
+        <section class="instructions-card" aria-labelledby="instructions-heading">
+            <div class="instructions-header">
+                <div class="eyebrow">Device Setup &amp; Transfer</div>
+                <h2 id="instructions-heading">Reader Device Instructions</h2>
+            </div>
+
+            <div class="devices-list">
+                <!-- Kindle -->
+                <div class="device-item">
+                    <div class="device-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+                            <line x1="8" y1="6" x2="16" y2="6"></line>
+                            <line x1="8" y1="10" x2="16" y2="10"></line>
+                            <line x1="8" y1="14" x2="12" y2="14"></line>
+                        </svg>
+                    </div>
+                    <div class="device-text">
+                        <h3>Kindle</h3>
+                        <p>
+                            Go to <a href="https://www.amazon.com/sendtokindle" target="_blank"
+                                rel="noopener">amazon.com/sendtokindle</a> in any browser, log into your Amazon account,
+                            and drop the .epub file to sync wirelessly to your Kindle.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="device-divider"></div>
+
+                <!-- Apple -->
+                <div class="device-item">
+                    <div class="device-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 20.94c1.5 0 2.75-.75 3.5-.75.7 0 1.9.75 3.5.75 2.15 0 3.75-1.9 3.75-3.8 0-1.85-1.05-3.15-2.25-3.95.1-.4.15-.8.15-1.2 0-2.5-2-4.5-4.5-4.5-1.15 0-2.2.45-3 1.2-.8-.75-1.85-1.2-3-1.2-2.5 0-4.5 2-4.5 4.5 0 .4.05.8.15 1.2-1.2.8-2.25 2.1-2.25 3.95 0 1.9 1.6 3.8 3.75 3.8 1.6 0 2.8-.75 3.5-.75.75 0 2 .75 3.5.75z"></path>
+                            <path d="M12 5.5c1-1.5 1.5-2.5 1-3.5-1 0-2 1-2.5 2.5.5.5 1 1 1.5 1z"></path>
+                        </svg>
+                    </div>
+                    <div class="device-text">
+                        <h3>Apple (iPhone / iPad / Mac)</h3>
+                        <p>
+                            Open the .epub file directly to add it to Apple Books with iCloud syncing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="device-divider"></div>
+
+                <!-- Android & Kobo -->
+                <div class="device-item">
+                    <div class="device-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                            <circle cx="12" cy="18" r="1"></circle>
+                        </svg>
+                    </div>
+                    <div class="device-text">
+                        <h3>Android &amp; Kobo</h3>
+                        <p>
+                            Open the .epub in Google Play Books or sideload via USB to Kobo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="device-divider"></div>
+
+                <!-- Desktop -->
+                <div class="device-item">
+                    <div class="device-icon-box" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="device-text">
+                        <h3>Desktop</h3>
+                        <p>
+                            Open the .pdf in any browser or desktop reader, or use Calibre for the .epub.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Helpful tip / support box -->
+            <div class="support-box">
+                <strong>Need Assistance?</strong>
+                If you encounter any issues downloading or opening your files, please reach out via our
+                <a href="/#contact">contact form</a> and we will ensure you receive your edition promptly.
+            </div>
+        </section>
+
+        <!-- SUBTLE RETURN NAVIGATION -->
+        <div class="bottom-nav">
+            <a href="/" class="home-link">
+                <span>&larr;</span> Return to Home
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025&ndash;2026 Matthew Tyson. Published by The Syncretic Foundation, Inc.</p>
+        <p style="font-size: 0.72rem; margin-top: 0.5rem;">
+            This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"
+                rel="noopener">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+        </p>
+    </footer>
+
+</body>
+
+</html>
